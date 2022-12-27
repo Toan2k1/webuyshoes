@@ -1,0 +1,318 @@
+:root{
+  --green: #3BE798;
+  --violet: #7F6EB2;
+  --dark: #2B2B2B;
+}
+.container1 {
+  @apply w-full;
+  height:100%;
+  background-color: white;
+  .slider {
+
+    .swiper-wrapper {
+      width: 100%;
+      height: 680px;
+      background-color: #F3EDD7;
+
+      .info {
+        flex: 4;
+        height: 650px;
+        animation: text 3s forwards;
+
+        .btn-buyslider {
+          border: 3px;
+          border-radius: 100px;
+          border-style: solid;
+
+        }
+
+        .btn-buyslider:hover {
+          @apply bg-black text-blue-50;
+        }
+      }
+
+      .img-shoe-slider {
+        height: 650px;
+        flex: 6;
+
+        .img-shoes {
+          width: 550px;
+          height: 550px;
+          animation: zoom 3s forwards;
+
+
+        }
+
+      }
+
+      .info2 {
+        flex: 4;
+        height: 650px;
+        animation: text 3s forwards;
+        animation-delay: 4s;
+
+        .btn-buyslider {
+          border: 3px;
+          border-radius: 100px;
+          border-style: solid;
+        }
+
+        .btn-buyslider:hover {
+          @apply bg-black text-blue-50
+        }
+      }
+
+      .img-shoe-slider2 {
+        height: 650px;
+        flex: 6;
+
+        .img-shoes2 {
+          width: 700px;
+          height: 450px;
+          animation: zoom 3s forwards;
+          animation-delay: 4s;
+
+        }
+
+      }
+
+      .info3 {
+        flex: 4;
+        height: 650px;
+        animation: text 3s forwards;
+        animation-delay: 10s;
+
+        .btn-buyslider {
+          border: 3px;
+          border-radius: 100px;
+          border-style: solid;
+        }
+
+        .btn-buyslider:hover {
+          @apply bg-black text-blue-50
+        }
+      }
+
+      .img-shoe-slider3 {
+        height: 650px;
+        flex: 6;
+
+        .img-shoes3 {
+          width: 700px;
+          height: 550px;
+          animation: zoom 3s forwards;
+          animation-delay: 10s;
+        }
+
+        .btn-buyslider:hover {
+          @apply bg-black
+        }
+      }
+
+      .info4 {
+        flex: 4;
+        height: 650px;
+        animation: text 3s forwards;
+        animation-delay: 16s;
+
+        .btn-buyslider {
+          border: 3px;
+          border-radius: 100px;
+          border-style: solid;
+        }
+
+        .btn-buyslider:hover {
+          @apply bg-black text-blue-50
+        }
+      }
+
+      .img-shoe-slider4 {
+        height: 650px;
+        flex: 6;
+
+        .img-shoes4 {
+          width: 600px;
+          height: 550px;
+          animation: zoom 3s forwards;
+          animation-delay: 16s;
+
+        }
+
+      }
+    }
+  }
+
+  .product {
+    width: 100%;
+    height: 1300px;
+
+    .card{
+      border-radius: 30px;
+      width:300px;
+      background-color: #2B2B2B;
+    }
+    .basicInfo{
+      background-color: #57e6b8;
+      border-radius: 30px;
+      padding:25px;
+      position: relative;
+    }
+    .title .category,
+    .title .info{
+      font-weight: 600;
+
+    }
+    .title .name{
+      font-weight: bold;
+      font-size: large;
+      padding-bottom:3px;
+    }
+    .card .img{
+      height:200px;
+      position: relative;
+      z-index: 1;
+
+    }
+    .card .img img{
+      width:100%;
+      transform: scale(1) rotate(20deg);
+      transition: 0.5s;
+      display: none;
+    }
+    .img input:checked ~ img{
+      display: block;
+    }
+
+    .img input{
+      position: absolute;
+      opacity: 0;
+    }
+    .colors{
+      display: flex;
+      font-size: xx-small;
+      text-align: center;
+    }
+    .colors label{
+      margin-right:10px;
+    }
+    .colors .name{
+      margin-bottom:5px;
+    }
+    .colors .ellipse{
+      width:40px;
+      height:40px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .mores{
+      padding:25px;
+    }
+    .mores .stars,
+    .mores .price{
+      display: inline-block;
+    }
+    .mores .price{
+      float: right;
+      color:#eee;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .mores .stars{
+      color:#9b9a9a;
+    }
+    .text-yellow{
+      color:rgb(209, 209, 6);
+    }
+    .addCard{
+      position: absolute;
+      width:100%;
+      bottom:0;
+    }
+    .addCard i{
+      position: absolute;
+      width:50px;
+      height:50px;
+      background-color: #3BE798;
+      color:#222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      right:90px;
+      bottom:-25px;
+      border:5px solid #2B2B2B;
+      transition: 0.5s;
+      opacity: 0;
+      transform: translate(0,10px);
+    }
+
+
+    .addCard::after{
+      right:unset;
+      left:107px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 55%;
+    }
+    .card:hover .img img{
+      transform: scale(1.2) rotate(30deg) translate(10px, -20px);
+    }
+    .card:hover .img::after{
+      width:90%;
+
+    }
+    .card:hover .addCard i{
+      opacity: 1;
+      transform: translate(0,0);
+    }
+  }
+
+  @keyframes zoom {
+    from {
+      transform: scale(1) rotate(0deg)
+    }
+    to {
+      transform: scale(1.1) rotate(-20deg)
+    }
+  }
+
+  @keyframes text {
+    from {
+      opacity: 0;
+      margin-left: -4rem;
+    }
+    to {
+      opacity: 1;
+      margin-left: 4rem;
+    }
+  }
+  @keyframes menu {
+    from {
+      opacity: 0;
+
+    }
+    to {
+      opacity: 1;
+
+    }
+  }
+  @keyframes menulv2 {
+    from {
+
+      height: 0;
+    }
+    to {
+
+      height: 163px;
+    }
+  }
+  @keyframes menulv3 {
+    from {
+
+      height: 0;
+    }
+    to {
+
+      height: 81px;
+    }
+  }
+}

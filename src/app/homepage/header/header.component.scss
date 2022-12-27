@@ -1,0 +1,83 @@
+.menu {
+  .mainmenu {
+    .all{
+      .click{
+        @apply text-blue-900;
+      }
+    }
+    .effect_hover {
+      text-decoration: none;
+      @apply relative;
+      padding: 0px 10px;
+      margin:30px 0px;
+    }
+    .menu_child{
+      margin-top: 27px;
+      padding-left: 20px;
+    }
+    .effect_hover:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 3px;
+      @apply bg-blue-400;
+      left: 0;
+      bottom: -10px;
+      transition: 0.3s;
+    }
+
+    .effect_hover:hover:after {
+      width: 100%;
+    }
+
+
+    .Brand:hover .menu_child {
+      display: block;
+      animation:menu 5s forwards;
+    }
+
+
+    .Brand:hover .menu_child {
+      display: block;
+      animation:menulv2 1s forwards;
+    }
+  }
+  .groupicon{
+    .icon {
+
+    }
+    .sub{
+
+      display: none;
+    }
+
+    .is-active {
+      display: block;
+      @apply flex flex-col items-center;
+    }
+
+    .sub2{
+
+      display: none;
+    }
+    .is-active {
+      display: block;
+      @apply flex flex-col items-center;
+    }
+
+  }
+}
+.active {
+  background-color:white;
+  @apply shadow-2xl;
+  animation:menulv3 0.5s forwards;
+}
+
+@keyframes menulv3 {
+  from {
+    height:0;
+  }
+  to {
+    height:81px;
+  }
+}
