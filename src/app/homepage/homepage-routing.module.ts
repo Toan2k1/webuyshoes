@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'home', component:HomepageComponent},
   {path: 'cart', component:CartComponent},
   {path: 'login', component:SignInComponent},
-  {path: 'productdetail', component:ProductdetailComponent},
+  {path: 'productdetail/:id', component:ProductdetailComponent},
   {path: 'product', component:ProductComponent},
   {path: 'about', component:AboutComponent},
   {path:'',pathMatch:'full',component:HomepageComponent}

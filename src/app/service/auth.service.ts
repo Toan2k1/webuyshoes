@@ -12,6 +12,6 @@ export class AuthService {
   }
   login(user:any){
     return this.http.post<any>('http://localhost:8000/api/login',user)
-
   }
+
 }

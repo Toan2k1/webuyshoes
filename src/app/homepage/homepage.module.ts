@@ -14,6 +14,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import { ProductComponent } from './product/product.component';
 import { AboutComponent } from './about/about.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -26,14 +27,15 @@ import { AboutComponent } from './about/about.component';
     ProductComponent,
     AboutComponent,
   ],
-  imports: [
-    CommonModule,
-    HomepageRoutingModule,
-    NgxUsefulSwiperModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule
-  ]
+    imports: [
+        CommonModule,
+        HomepageRoutingModule,
+        NgxUsefulSwiperModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        ReactiveFormsModule
+    ]
 })
 export class HomepageModule { }

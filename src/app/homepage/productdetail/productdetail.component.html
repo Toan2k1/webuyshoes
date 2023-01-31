@@ -9,10 +9,7 @@
       <div class="col-md-6">
         <swiper [config]="config">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="./assets/img/adidas.png" alt=""></div>
-            <div class="swiper-slide"><img src="./assets/img/convester.png" alt=""></div>
-            <div class="swiper-slide"><img src="./assets/img/filafinal.png" alt=""></div>
-
+            <div class="swiper-slide"><img src="http://localhost:2222/{{product.avatar}}" alt=""></div>
 
           </div>
           <!-- Add Pagination -->
@@ -22,7 +19,7 @@
       <div class="col-md-6">
         <div class="product-dtl">
           <div class="product-info">
-            <div class="product-name">Variable Product</div>
+            <div class="product-name">{{product.name}}</div>
             <div class="reviews-counter">
               <div class="rate">
                 <input type="radio" id="star5" name="rate" value="5" checked />
@@ -38,9 +35,9 @@
               </div>
               <span>3 Reviews</span>
             </div>
-            <div class="product-price-discount"><span>$39.00</span><span class="line-through">$29.00</span></div>
+            <div class="product-price-discount"><span>{{product.price}} VND</span><span class="line-through">$29.00</span></div>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>{{product.description}}</p>
           <div class="row">
             <div class="col-md-6">
               <label for="size">Size</label>
@@ -60,24 +57,15 @@
               </select>
             </div>
           </div>
-          <div class="product-count">
-            <label for="size">Quantity</label>
-            <div class="col-md-3 col-lg-3 col-xl-2 d-flex mt-7">
-              <button class="btn btn-link px-2"
-                      onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                <i class="fas fa-minus"></i>
-              </button>
-
-              <input id="form2" min="0" name="quantity" value="1" type="number"
-                     class="form-control form-control-sm" style="width: 50px" />
-
-              <button class="btn btn-link px-2"
-                      onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                <i class="fas fa-plus"></i>
-              </button>
+          <form [formGroup]="form">
+            <div class="relative">
+              <mat-form-field appearance="outline" >
+                <mat-label>number</mat-label>
+                <input  matInput placeholder="Number" required type="number" formControlName="quantity">
+              </mat-form-field>
             </div>
-            <a href="#" class="round-black-btn" routerLink="/cart">Add to Cart</a>
-          </div>
+          </form>
+          <button mat-flat-button color="primary" (click)="addToCart(product.id)" >Sign Up</button>
         </div>
       </div>
     </div>

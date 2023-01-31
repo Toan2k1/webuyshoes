@@ -3,6 +3,8 @@ import {SwiperOptions} from "swiper";
 import {MatDialog} from "@angular/material/dialog";
 import {CartComponent} from "../../../../../websites/src/app/homepage/cart/cart.component";
 import { Router } from '@angular/router';
+import {Product} from "../../models/product";
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-homepage',
@@ -10,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
+
   config: SwiperOptions = {
     loop:true,
     speed:4000,
@@ -25,7 +28,7 @@ export class HomepageComponent implements OnInit {
   };
 
 
-  constructor(private router :Router) { }
+  constructor(private router :Router,private productService:ProductService) { }
 
   ngOnInit(): void {
   }

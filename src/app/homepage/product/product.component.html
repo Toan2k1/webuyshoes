@@ -3,128 +3,18 @@
   <div class="title w-full mt-44">
     <p class="text-3xl font-bold text-center">Giày Nike</p>
   </div>
-  <div class="allproduct grid gap-4 grid-cols-4 mt-16 ml-16">
+  <div class="allproduct grid gap-4 grid-cols-4 mt-16 ml-16" *ngFor="let item of listProduct">
   <div class="box-image w-60 h-80  ">
     <div class="image flex justify-center items-center bg-gray-200 h-64">
-      <img class="img-shoes" src="./assets/img/nike3.png" alt="">
+      <img class="img-shoes" src="http://localhost:2222/{{item.avatar}}" alt="">
     </div>
     <div class="description w-full">
-      <p class="text-center font-bold text-xl">Nike PG1 “Pre-Heat”</p>
-      <p class="text-center">4000000 VNĐ</p>
+      <p class="text-center font-bold text-xl">{{item.name}}</p>
+      <p class="text-center">{{item.price}}</p>
+      <button mat-button routerLink="/productdetail/{{item.id}}">chi tiết</button>
     </div>
   </div>
-  <div class="box-image w-60 h-80  ">
-    <div class="image flex justify-center items-center bg-gray-200 h-64">
-      <img class="img-shoes" src="./assets/img/nike3.png" alt="">
-    </div>
-    <div class="description w-full">
-      <p class="text-center font-bold text-xl">Nike PG1 “Pre-Heat”</p>
-      <p class="text-center">4000000 VNĐ</p>
-    </div>
   </div>
-  <div class="box-image w-60 h-80  ">
-    <div class="image flex justify-center items-center bg-gray-200 h-64">
-      <img class="img-shoes" src="./assets/img/nike3.png" alt="">
-    </div>
-    <div class="description w-full">
-      <p class="text-center font-bold text-xl">Nike PG1 “Pre-Heat”</p>
-      <p class="text-center">4000000 VNĐ</p>
-    </div>
-  </div>
-  <div class="box-image w-60 h-80  ">
-    <div class="image flex justify-center items-center bg-gray-200 h-64">
-      <img class="img-shoes" src="./assets/img/nike3.png" alt="">
-    </div>
-    <div class="description w-full">
-      <p class="text-center font-bold text-xl">Nike PG1 “Pre-Heat”</p>
-      <p class="text-center">4000000 VNĐ</p>
-    </div>
-  </div>
-  <div class="box-image w-60 h-80  ">
-    <div class="image flex justify-center items-center bg-gray-200 h-64">
-      <img class="img-shoes" src="./assets/img/nike3.png" alt="">
-    </div>
-    <div class="description w-full">
-      <p class="text-center font-bold text-xl">Nike PG1 “Pre-Heat”</p>
-      <p class="text-center">4000000 VNĐ</p>
-    </div>
-  </div>
-  <div class="box-image w-60 h-80  ">
-    <div class="image flex justify-center items-center bg-gray-200 h-64">
-      <img class="img-shoes" src="./assets/img/nike3.png" alt="">
-    </div>
-    <div class="description w-full">
-      <p class="text-center font-bold text-xl">Nike PG1 “Pre-Heat”</p>
-      <p class="text-center">4000000 VNĐ</p>
-    </div>
-  </div>
-  <div class="box-image w-60 h-80  ">
-    <div class="image flex justify-center items-center bg-gray-200 h-64">
-      <img class="img-shoes" src="./assets/img/nike3.png" alt="">
-    </div>
-    <div class="description w-full">
-      <p class="text-center font-bold text-xl">Nike PG1 “Pre-Heat”</p>
-      <p class="text-center">4000000 VNĐ</p>
-    </div>
-  </div>
-  <div class="box-image w-60 h-80  ">
-    <div class="image flex justify-center items-center bg-gray-200 h-64">
-      <img class="img-shoes" src="./assets/img/nike3.png" alt="">
-    </div>
-    <div class="description w-full">
-      <p class="text-center font-bold text-xl">Nike PG1 “Pre-Heat”</p>
-      <p class="text-center">4000000 VNĐ</p>
-    </div>
-  </div>
-  <div class="box-image w-60 h-80  ">
-    <div class="image flex justify-center items-center bg-gray-200 h-64">
-      <img class="img-shoes" src="./assets/img/nike3.png" alt="">
-    </div>
-    <div class="description w-full">
-      <p class="text-center font-bold text-xl">Nike PG1 “Pre-Heat”</p>
-      <p class="text-center">4000000 VNĐ</p>
-    </div>
-  </div>
-  <div class="box-image w-60 h-80  ">
-    <div class="image flex justify-center items-center bg-gray-200 h-64">
-      <img class="img-shoes" src="./assets/img/nike3.png" alt="">
-    </div>
-    <div class="description w-full">
-      <p class="text-center font-bold text-xl">Nike PG1 “Pre-Heat”</p>
-      <p class="text-center">4000000 VNĐ</p>
-    </div>
-  </div>
-  <div class="box-image w-60 h-80  ">
-    <div class="image flex justify-center items-center bg-gray-200 h-64">
-      <img class="img-shoes" src="./assets/img/nike3.png" alt="">
-    </div>
-    <div class="description w-full">
-      <p class="text-center font-bold text-xl">Nike PG1 “Pre-Heat”</p>
-      <p class="text-center">4000000 VNĐ</p>
-    </div>
-  </div>
-  <div class="box-image w-60 h-80  ">
-    <div class="image flex justify-center items-center bg-gray-200 h-64">
-      <img class="img-shoes" src="./assets/img/nike3.png" alt="">
-    </div>
-    <div class="description w-full">
-      <p class="text-center font-bold text-xl">Nike PG1 “Pre-Heat”</p>
-      <p class="text-center">4000000 VNĐ</p>
-    </div>
-  </div>
-  <div class="box-image w-60 h-80  ">
-  <div class="image flex justify-center items-center bg-gray-200 h-64">
-    <img class="img-shoes" src="./assets/img/nike3.png" alt="">
-  </div>
-  <div class="description w-full">
-    <p class="text-center font-bold text-xl">Nike PG1 “Pre-Heat”</p>
-    <p class="text-center">4000000 VNĐ</p>
-  </div>
-</div>
-  </div>
-
-
-
 </div>
 
 <app-footer></app-footer>
