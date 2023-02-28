@@ -2,22 +2,20 @@
 <div class="menu w-full h-20 flex items-center justify-around bg-white  fixed z-20 top-0  ">
   <div class="logo ml-20 "><img class="w-32 h-32 " src="./assets/img/Logo2final.png" alt=""></div>
   <div class="mainmenu font-medium w-5/12  ">
-    <div class=" all flex items-center justify-around ">
+    <div class=" all flex items-center justify-evenly ">
       <a class="effect_hover  " href="" routerLink="/home" routerLinkActive="click">Trang Chủ</a>
       <a class="Brand relative effect_hover cursor-pointer" routerLinkActive="click" routerLink="/product">Sản Phẩm</a>
-      <a class="effect_hover " routerLinkActive="click">Tin Tức</a>
       <a class="effect_hover "  routerLinkActive="click" routerLink="/about">Thông Tin</a>
-      <a class="effect_hover" routerLinkActive="click">Liên Hệ</a>
     </div>
   </div>
   <div class="groupicon mr-20 ">
     <div class="icon relative">
       <i class="fa-solid fa-magnifying-glass text-2xl"></i>
       <i class="fa-solid fa-cart-shopping text-2xl mr-5 ml-5" routerLink="/cart"></i>
-      <i class=" user  fa-solid fa-user text-2xl"><span>{{username}}</span></i>
+      <i class=" user  fa-solid fa-user text-2xl"><span class="ml-2">{{username}}</span></i>
     </div>
-    <div class=" absolute sub ml-12 mt-2 w-28 h-32 bg-red-400 rounded-2xl ">
-      <a href="">Tài Khoản</a>
+    <div class=" absolute sub ml-12 mt-2 w-48 h-32 bg-red-400 rounded-2xl ">
+      <a href="" routerLink="/orderdetails">Theo Dõi Đơn Hàng</a>
       <a href="">Giỏ Hàng</a>
       <a href="">Đổi Mật Khẩu</a>
       <a href="" (click)="logout()">Đăng Xuất</a>

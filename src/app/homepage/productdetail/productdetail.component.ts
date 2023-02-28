@@ -54,7 +54,6 @@ export class ProductdetailComponent implements OnInit {
     }
     this.cartService.addToCart(data).subscribe(res => {
       console.log(res)
-      alert("Thành công")
     })
   }
 

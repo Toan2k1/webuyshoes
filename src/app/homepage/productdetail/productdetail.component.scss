@@ -1,3 +1,4 @@
+
 .pd-wrap {
   padding: 40px 0;
   font-family: 'Poppins', sans-serif;
@@ -21,17 +22,6 @@
   padding-top: 10px;
   padding-bottom: 15px;
   font-family: 'Poppins', sans-serif;
-}
-.user-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  position: relative;
-  min-width: 80px;
-  background-size: 100%;
-}
-.carousel-testimonial .item {
-  padding: 30px 10px;
 }
 .quote {
   position: absolute;
@@ -69,9 +59,7 @@
 .owl-nav button span {
   font-size: 45px;
 }
-.product-thumb .item img {
-  height: 100px;
-}
+
 .product-name {
   font-size: 22px;
   font-weight: 500;
@@ -135,13 +123,7 @@
 .rate:not(:checked) > label:hover ~ label {
   color: #deb217;
 }
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-  color: #c59b08;
-}
+
 .product-dtl p {
   font-size: 14px;
   line-height: 24px;

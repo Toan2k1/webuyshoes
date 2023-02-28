@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../service/product.service";
 import {Product} from "../../models/product";
+import { CatalogService } from 'src/app/service/catalog.service';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-product',
@@ -9,14 +11,28 @@ import {Product} from "../../models/product";
 })
 export class ProductComponent implements OnInit {
   listProduct:Product[]=[];
-  constructor(private productService: ProductService) { }
+  id:any;
+  constructor(private productService: ProductService, private catalogService: CatalogService,
+              private activeRoute:ActivatedRoute
+              ) { }
 
   ngOnInit(): void {
-    this.getlistProducts();
-  }
-  getlistProducts(){
-    this.productService.getlistProduct().subscribe(res => {
-      this.listProduct=res;
+    this.activeRoute.paramMap.subscribe(data=> {
+      this.id=data.get('id');
     })
+    this.getlistProductsByCatalogName();
+  }
+  getlistProductsByCatalogName(){
+    this.catalogService.getlistproductByCatalog(this.id).subscribe((res:any) => {
+      this.listProduct=res.products;
+      console.log(this.listProduct);
+    })
+  }
+  convertNumber(s: any) {
+    if(typeof s == "number") {
+      let tmp = s.toString();
+      return tmp.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+    return s;
   }
 }

@@ -1,0 +1,8 @@
+<div class="">
+<p class="text-center font-bold text-xl" >Danh Mục Sản Phẩm</p>
+<div class="category w-full" style="flex: 1.5" *ngFor="let item of listCatalog">
+  <div class="w-11/12 h-11 flex items-center justify-center bg-indigo-500 ml-3 mt-3 rounded-2xl">
+    <a href="/product/{{item.id}}" class="">{{item.name}}</a>
+  </div>
+</div>
+</div>

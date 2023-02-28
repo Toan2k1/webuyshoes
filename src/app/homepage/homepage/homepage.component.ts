@@ -12,7 +12,7 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-
+  listProductLatest:Product[]=[]
   config: SwiperOptions = {
     loop:true,
     speed:4000,
@@ -31,7 +31,13 @@ export class HomepageComponent implements OnInit {
   constructor(private router :Router,private productService:ProductService) { }
 
   ngOnInit(): void {
+    this.getlistProductsLatest()
   }
-
+  getlistProductsLatest(){
+    this.productService.getlistProductlates().subscribe(res => {
+      this.listProductLatest=res;
+      console.log(this.listProductLatest)
+    })
+  }
 
 }

@@ -15,6 +15,13 @@ import {MatButtonModule} from "@angular/material/button";
 import { ProductComponent } from './product/product.component';
 import { AboutComponent } from './about/about.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatIconModule} from "@angular/material/icon";
+import { OderComponent } from './oder/oder.component';
+import {MatSelectModule} from "@angular/material/select";
+import {MatOptionModule} from "@angular/material/core";
+import { SuccessDialogComponent } from './success-dialog/success-dialog.component';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { ViewCatalogComponent } from './view-catalog/view-catalog.component';
 
 
 @NgModule({
@@ -26,16 +33,23 @@ import {ReactiveFormsModule} from "@angular/forms";
     ProductdetailComponent,
     ProductComponent,
     AboutComponent,
+    OderComponent,
+    SuccessDialogComponent,
+    OrderDetailComponent,
+    ViewCatalogComponent,
   ],
-    imports: [
-        CommonModule,
-        HomepageRoutingModule,
-        NgxUsefulSwiperModule,
-        MatDialogModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        ReactiveFormsModule
-    ]
+  imports: [
+    CommonModule,
+    HomepageRoutingModule,
+    NgxUsefulSwiperModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatSelectModule,
+    MatOptionModule
+  ]
 })
 export class HomepageModule { }

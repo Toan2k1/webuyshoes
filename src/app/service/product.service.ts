@@ -10,7 +10,10 @@ export class ProductService {
 
   constructor(private httpclient:HttpClient) { }
   getlistProduct():Observable<Product[]>{
-    return this.httpclient.get<Product[]>(`http://localhost:8000/api/product/get-list-product`);
+    return this.httpclient.get<Product[]>(`http://localhost:8000/api/product/getAll`);
+  }
+  getlistProductlates():Observable<Array<Product>>{
+    return this.httpclient.get<Array<Product>>(`http://localhost:8000/api/product/getAll/?_limit=4`);
   }
   deleteProduct = (id: string) => this.httpclient.delete(`http://localhost:8000/api/product/deleteProduct/${id}`)
   addProduct(product: any){
@@ -19,6 +22,6 @@ export class ProductService {
   editProduct=(data:any,id:number)=>this.httpclient.put<any>(`http://localhost:8000/api/product/edit-Product/`+id,data)
 
   getOne(id: number):Observable<Product>{
-    return this.httpclient.get<Product>(`http://localhost:8000/api/product/getProductbyId/`+id);
+    return this.httpclient.get<Product>(`http://localhost:8000/api/product/getProductById/`+id);
   }
 }

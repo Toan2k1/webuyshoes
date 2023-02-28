@@ -8,11 +8,10 @@
           <div class=" info pt-32">
             <img class="w-72 h-36 ml-20 " src="./assets/img/nike_PNG17.png" alt="">
             <p class="  ml-16 text-2xl mt-5 text-yellow-500 ">NIKE SPORT SHOES</p>
-            <p class="   mt-7 mb-7 ml-16 text-5xl text-gray-800">Giày Nike Free 5.0</p>
+            <p class=" mt-7 mb-7 ml-16 text-5xl text-gray-800">Giày Nike Free 5.0</p>
             <p class="   ml-16 w-7/12">Giày Nike Free 5.0 phù hợp với mọi
               hoạt động hàng ngày và khi kết hợp với những chiếc quần
               jean hay quần sooc sẽ cho bạn sự tự tin và năng động.</p>
-            <button class="  btn-buyslider ml-20 mt-7 w-32 h-9" routerLink="/cart">Mua Ngay</button>
           </div>
           <div class="img-shoe-slider flex items-center justify-center ">
             <img class=" img-shoes  w-32 h-32" src="./assets/img/nikeshoe1.png" alt="">
@@ -27,7 +26,6 @@
               giới.
               Kiểu dáng thanh lịch với phối màu Black/White cực dễ phối đồ với mọi outfit khác nhau,
               đây là một trong những mẫu sneaker cần nên có trong tủ đồ của mỗi người.</p>
-            <button class="  btn-buyslider ml-20 mt-7 w-32 h-9" routerLink="/cart">Mua Ngay</button>
           </div>
           <div class="img-shoe-slider2 flex items-center justify-center ">
             <img class=" img-shoes2  w-56 h-32" src="./assets/img/convester.png" alt="">
@@ -41,7 +39,6 @@
             <p class="   ml-16 w-7/12">Một huyền thoại trẻ.
               Dòng adidas Ultraboost ra mắt năm 2015 và có sức ảnh hưởng mạnh mẽ không chỉ trong giới chạy bộ.
               Thiết kế trung thành theo nguyên bản với đế giữa Boost cho cảm giác thoải mái đến khó tin.</p>
-            <button class="  btn-buyslider ml-20 mt-7 w-32 h-9" routerLink="/cart">Mua Ngay</button>
           </div>
           <div class="img-shoe-slider3 flex items-center justify-center ">
             <img class=" img-shoes3  w-32 h-32" src="./assets/img/adidas.png" alt="">
@@ -56,7 +53,7 @@
               Fila.
               Mẫu giày được thiết kế với phong cách chunky sneaker đầy nổi bật.
               Phần upper được làm bằng da cao cấp mang đến sự mềm mại cho đôi chân.</p>
-            <button class="  btn-buyslider ml-20 mt-7 w-32 h-9" routerLink="/cart">Mua Ngay</button>
+
           </div>
           <div class="img-shoe-slider4 flex items-center justify-center ">
             <img class=" img-shoes4  w-32 h-32" src="./assets/img/filafinal.png" alt="">
@@ -71,55 +68,23 @@
   <div class="product ">
     <p class="w-full flex justify-center text-3xl font-bold pt-10 text-red-700">Sản Phẩm Mới Nhất</p>
     <div class="all-product mt-16 ml-16  relative grid gap-3 grid-cols-4">
-    <div class="card ">
-      <div class="basicInfo">
-        <div class="title mb-10">
-          <div class="category text-2xl">Nike</div>
-          <div class="name">Air Jordan 1 2022</div>
-          <div class="info">New products 2022</div>
-        </div>
-        <div class="images">
-          <div class="img">
-            <div class="item">
-              <input type="radio" name="color" id="orange" checked>
-              <img src="./assets/img/jdl1-cam.png">
-            </div>
-            <div class="item">
-              <input type="radio" name="color" id="blue">
-              <img src="./assets/img/jdlow_blue-.png">
-            </div>
+      <div class="" *ngFor="let item of listProductLatest">
+      <div class="container">
+        <div class="wrapper">
+          <div class="banner-image">
+            <img src="{{item.image}}" alt="">
           </div>
+          <h1> {{item.categoryName}}</h1>
+          <p class="title_cart">{{item.name}}</p>
         </div>
-        <div class="colors">
-          <label for="orange">
-            <div class="name">Orange</div>
-            <div class="ellipse" style="background:#ba580d"></div>
-          </label>
-
-          <label for="blue">
-            <div class="name">Blue</div>
-            <div class="ellipse" style="background:#1d44d1"></div>
-          </label>
-        </div>
-        <div class="addCard">
-          <i class="fa-solid fa-basket-shopping"></i>
+        <div class="button-wrapper">
+          <button class="btn outline">DETAILS</button>
+          <button class="btn fill">BUY NOW</button>
         </div>
       </div>
-      <div class="mores">
-        <div class="stars">
-          <i class="fa-regular fa-star text-yellow"></i>
-          <i class="fa-regular fa-star text-yellow"></i>
-          <i class="fa-regular fa-star text-yellow"></i>
-          <i class="fa-regular fa-star text-yellow"></i>
-          <i class="fa-regular fa-star"></i>
-        </div>
-        <div class="price">$23.09</div>
       </div>
-
     </div>
     </div>
-
-  </div>
   <div class="feedback mt-10 mb-24 ">
     <p class="heading w-full flex justify-center text-red-700 font-bold text-3xl">Phản Hồi Khách Hàng</p>
     <div class="grid gap-3 grid-cols-3 ">
@@ -244,6 +209,7 @@
   </div>
   <app-footer></app-footer>
 </div>
+
 
 
 

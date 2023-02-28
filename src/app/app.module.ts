@@ -6,8 +6,11 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {HomepageModule} from "./homepage/homepage.module";
 import {LoginModule} from "./login/login.module";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {NgxUsefulSwiperModule} from "ngx-useful-swiper";
+import {AuthGuard} from "./core/auth.guard";
+import {AuthInterceptor} from "./core/auth.interceptor";
+import {AuthService} from "./service/auth.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,15 @@ import {NgxUsefulSwiperModule} from "ngx-useful-swiper";
     HttpClientModule,
 
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+    },
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

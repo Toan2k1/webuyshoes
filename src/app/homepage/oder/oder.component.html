@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<app-header></app-header>
+<div class="container w-full mb-10">
+  <p class="font-bold text-xl mt-36 ml-20">Thông Tin Giao Hàng</p>
+  <div class="flex">
+  <div class=" " style="flex:1">
+    <div class="w-full">
+      <form class="example-form" [formGroup]="form" (submit)="addToOrder()" >
+        <div class="">
+          <mat-form-field class=" ml-14 w-5/12 mt-10" appearance="outline">
+            <mat-label>Họ Và Tên</mat-label>
+            <input  matInput type="" required formControlName="fullName" >
+          </mat-form-field>
+          <mat-form-field class=" ml-16 w-5/12" appearance="outline">
+            <mat-label>Số Điện Thoại</mat-label>
+            <input  matInput type="" required formControlName="contactNumber" >
+          </mat-form-field>
+        </div>
+<!--        <mat-form-field appearance="outline" class="ml-14 w-5/12">
+          <mat-label>Favorite food</mat-label>
+          <mat-select>
+            <mat-option  [value]="">
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="ml-16 w-5/12">
+          <mat-label>Favorite food</mat-label>
+          <mat-select>
+            <mat-option  [value]="">
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="ml-14 w-5/12">
+          <mat-label>Favorite food</mat-label>
+          <mat-select>
+            <mat-option  [value]="">
+            </mat-option>
+          </mat-select>
+        </mat-form-field>-->
+        <mat-form-field class=" ml-14 w-11/12" appearance="outline">
+          <mat-label>Địa điểm nhận hàng</mat-label>
+          <input  matInput type="" required formControlName="address" >
+        </mat-form-field>
+
+        <button mat-raised-button class="w-11/12" style="margin-left: 58px;" color="warn">Thanh Toán</button>
+        <input class=""  type="text" formControlName="amount" >
+
+      </form>
+    </div>
+  </div>
+  <div class=" ml-10 product w-full mt-10 h-auto" style="flex:1"  >
+    <div class="flex justify-between" *ngFor="let item of listCart">
+    <div class=" flex">
+      <img class="w-28 h-20" src="http://localhost:2222/{{item.product.image}}" alt="">
+      <div class="detail ml-5">
+        <p class="font-bold text-xl">{{item.product.name}}</p>
+        <p>Size giày: {{item.product.size}}</p>
+        <p>Màu: {{item.product.color}}</p>
+        <p>Số Lượng: {{item.quantity}}</p>
+      </div>
+    </div>
+    <p class=" mr-16">{{item.totalprice}}</p>
+  </div>
+    <div class=" w-11/12 mt-10" >
+      <div class="flex justify-between">
+        <p>Tiền Tạm Tính</p>
+        <p>{{totalMoney}}</p>
+      </div>
+      <div class="flex mt-2 justify-between">
+        <p>Phí Vận Chuyển</p>
+        <p>Miễn Phí</p>
+      </div>
+      <div class="w-full bg-gray-400 mt-10" style="height:0.5px"></div>
+      <div class="flex justify-between">
+        <p>Tổng tiền hàng</p>
+        <p>{{totalMoney}}</p>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+<app-footer></app-footer>

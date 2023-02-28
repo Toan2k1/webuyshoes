@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 <app-header></app-header>
-<div class="container w-full ">
+<div class="container w-full mb-10 ">
   <div class="flex items-center flex-col">
     <p class="text-2xl font-bold ">Giỏ Hàng</p>
     <div class="w-11/12 h-16 mt-10 border-2 flex">
@@ -12,71 +12,34 @@
         <p>Thao Tác</p>
       </div>
     </div>
-    <div class="w-11/12 h-auto mt-10 border-2 shadow-xl" *ngFor="let item of listCart">
+    <div class="w-11/12 h-auto mt-10 border-2 shadow-xl" *ngFor="let item of listCart" >
       <div class="flex border-b-2">
-        <div class="flex items-center ml-10" style="flex: 1"><img src="http://localhost:2222/{{item.product.avatar}}" class="h-32 w-36 mt-3  mb-3" alt="">
+        <div class="flex items-center ml-10" style="flex: 1"><img src="http://localhost:2222/{{item.product.image}}" class="h-32 w-36 mt-3  mb-3" alt="">
           <div class="mt-3 ml-5">
-            <p class="w-56 ">{{item}}</p>
-            <p class="mt-6 text-yellow-500">Màu: xam, Kích thước: 39</p>
+            <p class="w-56 ">{{item.product.name}}</p>
+            <p class="mt-6 text-yellow-500">Màu: {{item.product.color}}, Size giày: {{item.product.size}}</p>
           </div>
         </div>
         <div class="flex items-center justify-around" style="flex: 1">
-          <p>2000000 VND</p>
+          <p>{{item.product.price}}</p>
           <div class="total flex" style="margin-left: -44px;">
-            <button class="text-xl minus-btn" onclick="tru()"><i class="fa-solid fa-minus"></i></button>
-            <input class="w-14 text-center" type="number" name="" id="amount" value="1">
-            <button class="text-xl plus-btn" onclick="cong()"><i class="fa-solid fa-plus"></i></button>
+            <input class="w-14 text-center" type="number" name="" id="amount" value="{{item.quantity}}">
           </div>
-          <p>3000000 VND</p>
-          <p>Xóa</p>
+          <p class="price">{{item.totalprice}}</p>
+          <button mat-icon-button color="warn" (click)="deleteCart(item.cartId)"><mat-icon>delete</mat-icon></button>
         </div>
       </div>
 
     </div>
     <div class="w-11/12 bg-gray-400 mt-10" style="height:1px"></div>
-    <div class=" w-11/12">
-      <div class="flex justify-between">
+    <div class=" w-11/12 ">
+      <div class="flex justify-between mb-10">
         <p>Tổng tiền hàng</p>
-        <p>3000000 đ</p>
+        <p>{{totalMoney}}</p>
       </div>
-      <div class="flex justify-between">
-        <p>Giảm giá sản phẩm</p>
-        <p>0 đ</p>
-      </div>
-      <div class="flex justify-between">
-        <p>Giảm giá coupon</p>
-        <p>00 đ</p>
-      </div>
-      <div class="flex justify-between">
-        <p>Phí vẩn chuyển</p>
-        <p>0 đ</p>
-      </div>
-      <div class="w-full bg-gray-400 mt-10" style="height:1px"></div>
-      <div class="flex justify-between">
-        <p>TỔNG</p>
-        <p>3000000 đ</p>
-      </div>
-    </div>
-  </div>
-  <div class="w-full">
-    <p class="text-red-600 text-2xl mt-10 text-center">Thông Tin Vận Chuyển</p>
-    <form class="example-form">
-      <div class="">
-        <mat-form-field class=" ml-14 w-3/12 mt-10" appearance="outline">
-          <mat-label>Họ Và Tên</mat-label>
-          <input  matInput type="" required >
-        </mat-form-field>
-        <mat-form-field class=" ml-32 w-3/12" appearance="outline">
-          <mat-label>Số Điện Thoại</mat-label>
-          <input  matInput type="" required >
-        </mat-form-field>
-      </div>
-      <mat-form-field class="ml-14 w-11/12 " appearance="outline">
-        <mat-label>Đia chỉ nhận hàng</mat-label>
-        <textarea matInput placeholder=""></textarea>
-      </mat-form-field>
-      <button mat-raised-button class="w-11/12" style="margin-left: 58px;" color="warn">Đặt Hàng</button>
-    </form>
-  </div>
 </div>
+    <button routerLink="/order" mat-raised-button class="w-11/12" color="warn">Đặt Hàng</button>
+</div>
+</div>
+
 <app-footer></app-footer>

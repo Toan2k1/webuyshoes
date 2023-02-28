@@ -32,7 +32,9 @@ export class SignInComponent implements OnInit {
     const user = this.form.value;
     this.auth.login(user).subscribe(
       res=>{
+        console.log(res);
         alert1.classList.add("is-active")
+        localStorage.setItem("token",res.accessToken);
         localStorage.setItem("user",user.username)
         setTimeout(()=>{
           alert1.classList.remove("is-active"),

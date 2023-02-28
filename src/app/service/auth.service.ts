@@ -8,10 +8,10 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
   register(user: any){
-    return this.http.post<any>('http://localhost:8000/api/registration',user)
+    return this.http.post<any>('http://localhost:8000/api/auth/registry',user)
   }
   login(user:any){
-    return this.http.post<any>('http://localhost:8000/api/login',user)
+    return this.http.post<any>('http://localhost:8000/api/auth/login',user)
   }
 
 }

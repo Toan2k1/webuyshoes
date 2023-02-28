@@ -1,10 +1,10 @@
 export class Product{
   id!:number;
-  avatar!: string
+  image!: string
   categoryName!: string
   color!: string
   description!: string
-  image!:[]
+
   name!: string
   price!: string
   quantity!: string
