@@ -11,7 +11,7 @@
     <p>Tổng Số Đơn Hàng: {{item.quantityProduct}} Sản Phẩm</p>
     <p>Tổng Số Đơn Hàng: {{item.orderDate | date:'short'}} </p>
     <p>Trạng Thái Đơn Hàng: {{item.status}}</p>
-    <p>Số Tiền Cần Thanh Toán: {{item.totalPriceOrder}}</p>
+    <p>Số Tiền Cần Thanh Toán: {{convertNumber(item.totalPriceOrder)}} VNĐ</p>
     </div>
   </div>
   <div class=" ml-10 w-11/12 h-16 mt-10 border-2 flex">
@@ -31,11 +31,11 @@
         </div>
       </div>
       <div class="flex items-center justify-around" style="flex: 1">
-        <p>{{item1.product.price}}</p>
+        <p>{{convertNumber(item1.product.price)}} VNĐ</p>
         <div class="total flex" style="margin-left: -44px;">
           <p class="ml-10">{{item1.quantity}}</p>
         </div>
-        <p class="price">{{item.totalPriceOrder}}</p>
+        <p class="price">{{convertNumber(item.totalPriceOrder)}} VNĐ</p>
       </div>
     </div>
 

@@ -21,11 +21,11 @@
           </div>
         </div>
         <div class="flex items-center justify-around" style="flex: 1">
-          <p>{{item.product.price}}</p>
+          <p>{{convertNumber(item.product.price)}} VNĐ</p>
           <div class="total flex" style="margin-left: -44px;">
             <input class="w-14 text-center" type="number" name="" id="amount" value="{{item.quantity}}">
           </div>
-          <p class="price">{{item.totalprice}}</p>
+          <p class="price">{{convertNumber(item.totalprice)}} VNĐ</p>
           <button mat-icon-button color="warn" (click)="deleteCart(item.cartId)"><mat-icon>delete</mat-icon></button>
         </div>
       </div>
@@ -35,7 +35,7 @@
     <div class=" w-11/12 ">
       <div class="flex justify-between mb-10">
         <p>Tổng tiền hàng</p>
-        <p>{{totalMoney}}</p>
+        <p>{{convertNumber(totalMoney)}} VNĐ</p>
       </div>
 </div>
     <button routerLink="/order" mat-raised-button class="w-11/12" color="warn">Đặt Hàng</button>

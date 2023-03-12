@@ -13,7 +13,6 @@ export class RegisterComponent implements OnInit {
 
   form= new FormGroup({
     username:new FormControl('',[Validators.required]),
-    email:new FormControl('',[Validators.required,Validators.email]),
     password:new FormControl('',[Validators.required,Validators.minLength(6)]),
     passwordxt:new FormControl('',[Validators.required]),
   })
@@ -38,17 +37,16 @@ export class RegisterComponent implements OnInit {
     const user = this.form.value;
     this.auth.register(user).subscribe(
       res=>{
-        alert1.classList.add("is-active")
-         setTimeout(()=>{
-           alert1.classList.remove("is-active"),
-             this.router.navigate(['/login'])
-         },4000)
-
-           },
-      res=>{
         alert3.classList.add("is-active")
         setTimeout(()=>{
           alert3.classList.remove("is-active")
+         },4000)
+           },
+      res=>{
+        alert1.classList.add("is-active")
+        setTimeout(()=>{
+          alert1.classList.remove("is-active"),
+            this.router.navigate(['/login'])
         },4000)
       }
     );

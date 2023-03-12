@@ -51,20 +51,20 @@
   <div class=" ml-10 product w-full mt-10 h-auto" style="flex:1"  >
     <div class="flex justify-between" *ngFor="let item of listCart">
     <div class=" flex">
-      <img class="w-28 h-20" src="http://localhost:2222/{{item.product.image}}" alt="">
+      <img class="w-20 h-20" src="http://localhost:2222/{{item.product.image}}" alt="">
       <div class="detail ml-5">
-        <p class="font-bold text-xl">{{item.product.name}}</p>
+        <p class="font-bold">{{item.product.name}}</p>
         <p>Size giày: {{item.product.size}}</p>
         <p>Màu: {{item.product.color}}</p>
         <p>Số Lượng: {{item.quantity}}</p>
       </div>
     </div>
-    <p class=" mr-16">{{item.totalprice}}</p>
+    <p class=" mr-16">{{convertNumber(item.totalprice)}} VNĐ</p>
   </div>
     <div class=" w-11/12 mt-10" >
       <div class="flex justify-between">
         <p>Tiền Tạm Tính</p>
-        <p>{{totalMoney}}</p>
+        <p>{{convertNumber(totalMoney)}} VNĐ</p>
       </div>
       <div class="flex mt-2 justify-between">
         <p>Phí Vận Chuyển</p>
@@ -73,7 +73,7 @@
       <div class="w-full bg-gray-400 mt-10" style="height:0.5px"></div>
       <div class="flex justify-between">
         <p>Tổng tiền hàng</p>
-        <p>{{totalMoney}}</p>
+        <p>{{convertNumber(totalMoney)}} VNĐ</p>
       </div>
   </div>
 </div>

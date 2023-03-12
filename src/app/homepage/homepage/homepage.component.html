@@ -67,19 +67,18 @@
   </div>
   <div class="product ">
     <p class="w-full flex justify-center text-3xl font-bold pt-10 text-red-700">Sản Phẩm Mới Nhất</p>
-    <div class="all-product mt-16 ml-16  relative grid gap-3 grid-cols-4">
-      <div class="" *ngFor="let item of listProductLatest">
+    <div class="all-product mt-16  relative grid gap-3 grid-cols-4">
+      <div class="mt-5"  *ngFor="let item of listProductLatest">
       <div class="container">
         <div class="wrapper">
           <div class="banner-image">
-            <img src="{{item.image}}" alt="">
+            <img src="http://localhost:2222/{{item.image}}" alt="">
           </div>
           <h1> {{item.categoryName}}</h1>
           <p class="title_cart">{{item.name}}</p>
         </div>
         <div class="button-wrapper">
-          <button class="btn outline">DETAILS</button>
-          <button class="btn fill">BUY NOW</button>
+          <button routerLink="/productdetail/{{item.id}}" class="btn outline">DETAILS</button>
         </div>
       </div>
       </div>

@@ -19,7 +19,13 @@ export class OrderDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getlistOrder();
   }
-
+  convertNumber(s: any) {
+    if(typeof s == "number") {
+      let tmp = s.toString();
+      return tmp.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+    return s;
+  }
 
 
   getlistOrder(){

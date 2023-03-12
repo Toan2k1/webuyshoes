@@ -20,19 +20,10 @@
           </mat-form-field>
           <span style="left: 5px;top: 62px; color:red" class="absolute" *ngIf="password && password.invalid && password.touched">*Hãy điền thông tin</span>
         </div>
-        <div class="advanced-form">
-          <a href="#">Forgot password?</a>
-          <button [disabled]="form.invalid" mat-flat-button color="primary">Login</button>
+        <div class="advanced-form w-full">
+          <button class="w-full" [disabled]="form.invalid" mat-flat-button color="primary">Login</button>
         </div>
       </form>
-      <div class="note">
-        Or sign in using
-      </div>
-      <div class="social-btn-group">
-        <button class="social-btn" mat-stroked-button color="primary">Facebook</button>
-        <button class="social-btn" mat-stroked-button color="warn">Google</button>
-        <button class="social-btn" mat-stroked-button>Twitter</button>
-      </div>
       <p>Don't have an account? <a href="" routerLink="/signup">Sign up.</a></p>
     </div>
   </div>

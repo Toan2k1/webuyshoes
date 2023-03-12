@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem("user")
+    localStorage.clear()
     this.router.navigate(["home"])
 
   }

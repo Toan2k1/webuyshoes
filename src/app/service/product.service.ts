@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Product} from "../models/product";
+import {ProductComment} from "../models/ProductComment";
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,8 @@ export class ProductService {
 
   getOne(id: number):Observable<Product>{
     return this.httpclient.get<Product>(`http://localhost:8000/api/product/getProductById/`+id);
+  }
+  addComment(data:ProductComment){
+    return this.httpclient.post<ProductComment>(`http://localhost:8000/addComment`,data)
   }
 }

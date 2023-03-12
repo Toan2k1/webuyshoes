@@ -14,7 +14,7 @@
         <div class="product-dtl">
           <div class="product-info">
             <div class="product-name">{{product.name}}</div>
-            <div class="product-price-discount"><span>{{product.price}} VND</span></div>
+            <div class="product-price-discount"><span>{{convertNumber(product.price)}} VND</span></div>
           </div>
           <p>{{product.description}}</p>
           <div class="row">
@@ -39,6 +39,29 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class=" ml-10 mt-10">
+  <p class="w-full text-center text-3xl font-bold">Phản Hồi Khách Hàng</p>
+  <div class=" flex mt-10">
+    <img class="rounded-full w-16 h-16 mr-10" src="./assets/img/adidas.png" alt="">
+    <form class="8/12 flex" [formGroup]="form1" (submit)="confirm(product.id)">
+      <mat-form-field style="width:590px"   >
+        <mat-label>Nhận Xét Của Bạn</mat-label>
+        <textarea formControlName="content" matInput placeholder="Hãy Viết Gì Đó...."></textarea>
+      </mat-form-field>
+      <button mat-raised-button class="w-2/12 h-16 ml-5" color="warn">Xác Nhận</button>
+    </form>
+  </div>
+  <div class="h-auto">
+  <div class="flex" *ngFor="let comment of productDetail">
+    <img class="rounded-full w-16 h-16 mr-3" src="./assets/img/adidas.png" alt="">
+    <div class="">
+    <p class="mt-3 font-bold ">{{comment.name}}</p>
+      <p>{{comment.content}}</p>
+    </div>
+  </div>
+
   </div>
 </div>
 <app-footer ></app-footer>

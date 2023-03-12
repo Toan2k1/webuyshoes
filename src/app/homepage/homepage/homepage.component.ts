@@ -35,7 +35,7 @@ export class HomepageComponent implements OnInit {
   }
   getlistProductsLatest(){
     this.productService.getlistProductlates().subscribe(res => {
-      this.listProductLatest=res;
+      this.listProductLatest=res.slice(1,9);
       console.log(this.listProductLatest)
     })
   }

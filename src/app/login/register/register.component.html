@@ -15,13 +15,6 @@
         <span style="left: 5px;top: 62px;font-size: 15px;color: red" class="absolute" *ngIf="username && username.invalid && username.touched">*Hãy điền thông tin</span>
         </div>
         <div class="relative">
-          <mat-form-field appearance="outline" >
-            <mat-label>Enter your Email</mat-label>
-            <input id="email" matInput placeholder="Email" type="text" required formControlName="email">
-          </mat-form-field>
-          <span style="left: 5px;top: 62px; color:red" class="absolute" *ngIf="email && email.invalid && email.touched">*Example:example@example.com</span>
-        </div>
-        <div class="relative">
         <mat-form-field appearance="outline">
           <mat-label>Enter your Password</mat-label>
           <input id="password" matInput placeholder="password" type="password" required formControlName="password">
@@ -35,19 +28,10 @@
         </mat-form-field>
         <span style="left: 5px;top: 62px; color:red" class="absolute" *ngIf="passwordxt && passwordxt.invalid && passwordxt.touched">*Hãy điền thông tin</span>
         </div>
-        <div class="advanced-form">
-          <a href="#">Forgot password?</a>
-          <button [disabled]="form.invalid" mat-flat-button color="primary" >Sign Up</button>
+        <div class="advanced-form w-full">
+          <button class="w-full" [disabled]="form.invalid" mat-flat-button color="primary" >Sign Up</button>
         </div>
       </form>
-      <div class="note">
-        Or sign in using
-      </div>
-      <div class="social-btn-group">
-        <button class="social-btn" mat-stroked-button color="primary">Facebook</button>
-        <button class="social-btn" mat-stroked-button color="warn">Google</button>
-        <button class="social-btn" mat-stroked-button>Twitter</button>
-      </div>
       <p>You have an account? <a href="" routerLink="/login">Login.</a></p>
     </div>
   </div>
