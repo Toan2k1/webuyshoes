@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {Product} from "../models/product";
 import {Order} from "../models/Order";
 import {Cart} from "../models/cart";
+import {OrderCancel} from "../models/OrderCancel";
 
 @Injectable({
   providedIn: 'root'
@@ -17,4 +18,5 @@ export class OderService {
   addToOrder(order:Order){
     return this.httpclient.post<any>('http://localhost:8000/api/order/checkOut',order)
   }
+  editOrder=(data:OrderCancel)=>this.httpclient.put<any>(`http://localhost:8000/api/order/updateStatus`,data)
 }

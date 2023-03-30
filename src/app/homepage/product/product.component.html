@@ -1,25 +1,43 @@
 <app-header></app-header>
-<div class="container1 mt-20 flex" >
+<div class="container1 mt-20 flex">
   <div class="category mt-28" style="flex: 1.5">
-   <app-view-catalog></app-view-catalog>
+    <app-view-catalog></app-view-catalog>
   </div>
-  <div  style="flex: 8.5">
-  <div class="title w-full mt-28">
-    <p class="text-3xl font-bold text-center">Sản Phẩm</p>
-  </div>
-    <div class="grid gap-4 grid-cols-4 mr-10">
-  <div class="allproduct  mt-16 ml-16" *ngFor="let item of listProduct">
-  <div class="box-image w-60 h-80 cursor-pointer" routerLink="/productdetail/{{item.id}}">
-    <div class="image flex justify-center items-center h-64">
-      <img class="img-shoes mt-10 rounded-2xl" src="http://localhost:2222/{{item.image}}" alt="">
+  <div style="flex: 8.5">
+    <div class="title w-full mt-28">
+      <p class="text-3xl font-bold text-center">Sản Phẩm</p>
     </div>
-    <div class="description w-full h-auto">
-      <p class="text-center font-bold mt-5">{{item.name}}</p>
-      <p class="text-center">{{convertNumber(item.price)}} VNĐ</p>
+    <form [formGroup]="form" (submit)="Search()">
+      <input placeholder="Search Product..." type="text" name="text" class="input float-right" formControlName="search">
+    </form>
+    <div id="listProduct" class="grid gap-4 grid-cols-4 mr-10 allProduct">
+      <div  class="  mt-16 ml-16 product1" *ngFor="let item of listProduct">
+        <div class="box-image w-60 h-80 cursor-pointer " routerLink="/productdetail/{{item.id}}">
+          <div class="image flex justify-center items-center h-64">
+            <img class="img-shoes mt-10 rounded-2xl" src="http://localhost:2222/{{item.image}}" alt="">
+          </div>
+          <div class="description w-full h-auto">
+            <p class="text-center font-bold mt-5">{{item.name}}</p>
+            <p class="text-center">{{convertNumber(item.price)}} VNĐ</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
+
+    <div id="searchProduct" class="grid gap-4 grid-cols-4 mr-10 searchProduct">
+      <div  class="  mt-16 ml-16 product2" *ngFor="let item of listSearch">
+        <div class="box-image w-60 h-80 cursor-pointer " routerLink="/productdetail/{{item.id}}">
+          <div class="image flex justify-center items-center h-64">
+            <img class="img-shoes mt-10 rounded-2xl" src="http://localhost:2222/{{item.image}}" alt="">
+          </div>
+          <div class="description w-full h-auto">
+            <p class="text-center font-bold mt-5">{{item.name}}</p>
+            <p class="text-center">{{convertNumber(item.price)}} VNĐ</p>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+
+  </div>
 </div>
 <app-footer></app-footer>

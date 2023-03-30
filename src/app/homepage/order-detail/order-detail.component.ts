@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CartServiceService} from "../../service/cart-service.service";
 import {OderService} from "../../service/oder.service";
 import {Order} from "../../models/Order";
+import {OrderCancel} from "../../models/OrderCancel";
 
 @Component({
   selector: 'app-order-detail',
@@ -10,7 +11,7 @@ import {Order} from "../../models/Order";
 })
 export class OrderDetailComponent implements OnInit {
 
-
+  status="Đã Hủy Đơn Hàng"
   order!:any[] ;
   totalMoney:number = 0;
   constructor(private cartService: CartServiceService,private orderService: OderService) {
@@ -33,5 +34,17 @@ export class OrderDetailComponent implements OnInit {
       this.order = res
       console.log(res)
     })
+  }
+
+  cancel(id:any) {
+   const data:OrderCancel={
+     id:id,
+     status:this.status
+    }
+    this.orderService.editOrder(data).subscribe(
+      res => {
+        alert("Hủy đơn hàng thành công")
+      }
+    )
   }
 }

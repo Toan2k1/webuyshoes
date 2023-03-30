@@ -24,6 +24,7 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { ViewCatalogComponent } from './view-catalog/view-catalog.component';
 
 
+
 @NgModule({
   declarations: [
     HomepageComponent,

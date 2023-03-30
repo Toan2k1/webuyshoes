@@ -26,7 +26,7 @@
             <input class="w-14 text-center" type="number" name="" id="amount" value="{{item.quantity}}">
           </div>
           <p class="price">{{convertNumber(item.totalprice)}} VNĐ</p>
-          <button mat-icon-button color="warn" (click)="deleteCart(item.cartId)"><mat-icon>delete</mat-icon></button>
+          <button mat-icon-button color="warn" (click)="deleteCart(item.product.id)"><mat-icon>delete</mat-icon></button>
         </div>
       </div>
 

@@ -28,4 +28,7 @@ export class ProductService {
   addComment(data:ProductComment){
     return this.httpclient.post<ProductComment>(`http://localhost:8000/addComment`,data)
   }
+  Search(data:any){
+    return this.httpclient.get<Product>(`http://localhost:8000/api/product/search?keyword=${data}`)
+  }
 }
