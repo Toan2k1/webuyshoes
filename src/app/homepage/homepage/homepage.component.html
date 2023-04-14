@@ -86,12 +86,13 @@
     </div>
   <div class="feedback mt-10 mb-24 ">
     <p class="heading w-full flex justify-center text-red-700 font-bold text-3xl">Phản Hồi Khách Hàng</p>
-    <div class="grid gap-3 grid-cols-3 ">
+    <div class="grid gap-3 grid-cols-3" >
+    <div  *ngFor="let item of listFeedback">
       <div class="box ml-3 w-11/12 h-48 mt-10 bg-blue-300 rounded-3xl shadow-inner">
         <div class=" nameuser flex pt-3">
-          <img class=" ml-3  mr-3 w-16 h-16 rounded-full" src="./assets/img/team/1.png" alt="">
+          <img class=" ml-3  mr-3 w-16 h-16 rounded-full" src="./assets/img/avtuser.jpg" alt="">
           <div>
-            <h3>Phạm Thị Phượng</h3>
+            <h3>{{item.name}}</h3>
             <div class="stars text-yellow-500">
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
@@ -102,108 +103,19 @@
           </div>
         </div>
         <p class=" ml-3 mb-3 mt-1">
-          Sản phẩm chất lượng
+          {{item.content}}
         </p>
       </div>
-      <div class="box ml-3 w-11/12 h-48 mt-10 bg-blue-300 rounded-3xl shadow-inner">
-        <div class=" nameuser flex pt-3">
-          <img class=" ml-3  mr-3 w-16 h-16 rounded-full" src="./assets/img/team/1.png" alt="">
-          <div>
-            <h3>Phạm Thị Phượng</h3>
-            <div class="stars text-yellow-500">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa fa-star"></i>
-            </div>
-          </div>
-        </div>
-        <p class=" ml-3 mb-3 mt-1">
-          Mọi người nên mua ạ
-        </p>
-      </div>
-      <div class="box ml-3 w-11/12 h-48 mt-10 bg-blue-300 rounded-3xl shadow-inner">
-        <div class=" nameuser flex pt-3">
-          <img class=" ml-3  mr-3 w-16 h-16 rounded-full" src="./assets/img/team/1.png" alt="">
-          <div>
-            <h3>Phạm Thị Phượng</h3>
-            <div class="stars text-yellow-500">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa fa-star"></i>
-            </div>
-          </div>
-        </div>
-        <p class=" ml-3 mb-3 mt-1">
-          Sẽ còn ửng hộ lâu dài
-        </p>
-      </div>
-      <div class="box ml-3 w-11/12 h-48 mt-10 bg-blue-300 rounded-3xl shadow-inner">
-        <div class=" nameuser flex pt-3">
-          <img class=" ml-3  mr-3 w-16 h-16 rounded-full" src="./assets/img/team/1.png" alt="">
-          <div>
-            <h3>Phạm Thị Phượng</h3>
-            <div class="stars text-yellow-500">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa fa-star"></i>
-            </div>
-          </div>
-        </div>
-        <p class=" ml-3 mb-3 mt-1">
-          5 sao
-        </p>
-      </div>
-      <div class="box ml-3 w-11/12 h-48 mt-10 bg-blue-300 rounded-3xl shadow-inner">
-        <div class=" nameuser flex pt-3">
-          <img class=" ml-3  mr-3 w-16 h-16 rounded-full" src="./assets/img/team/1.png" alt="">
-          <div>
-            <h3>Phạm Thị Phượng</h3>
-            <div class="stars text-yellow-500">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa fa-star"></i>
-            </div>
-          </div>
-        </div>
-        <p class=" ml-3 mb-3 mt-1">
-          Đẹp lắm ạ
-        </p>
-      </div>
-      <div class="box ml-3 w-11/12 h-48 mt-10 bg-blue-300 rounded-3xl shadow-inner">
-        <div class=" nameuser flex pt-3">
-          <img class=" ml-3  mr-3 w-16 h-16 rounded-full" src="./assets/img/team/1.png" alt="">
-          <div>
-            <h3>Phạm Thị Phượng</h3>
-            <div class="stars text-yellow-500">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa fa-star"></i>
-            </div>
-          </div>
-        </div>
-        <p class=" ml-3 mb-3 mt-1">
-          ahihi
-        </p>
-      </div>
+    </div>
     </div>
   </div>
   <div class="contribute h-72  bg-green-300 flex flex-col items-center justify-center">
     <h3 class="text-red-600">Đóng Góp Ý kiến Cho Chúng Tôi</h3>
     <p>Hãy Đóng Góp Ý Kiến Của Mình.Mọi Sự Đóng Góp Ý Kiến Của Các Bạn Là Vô Cùng Quý Giá Với Chúng Tôi.</p>
     <p>Để Chúng Tôi Ngày Càng Phát Triển Hơn.</p>
-    <form class="form-outline w-5/12 flex">
-      <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
-      <button type="button" class="btn btn-primary btn-lg w-36 ml-2">Gửi</button>
+    <form [formGroup]="form"  class="form-outline w-5/12 flex">
+      <textarea formControlName="content" class="form-control" type="text" rows="4"></textarea>
+      <button (click)="addFeedback()" type="button" class="btn btn-primary btn-lg w-36 ml-2">Gửi</button>
     </form>
   </div>
   <app-footer></app-footer>

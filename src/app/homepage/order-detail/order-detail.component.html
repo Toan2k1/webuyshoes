@@ -12,7 +12,7 @@
     <p>Tổng Số Đơn Hàng: {{item.orderDate | date:'short'}} </p>
     <p>Trạng Thái Đơn Hàng: {{item.status}}</p>
     <p>Số Tiền Cần Thanh Toán: {{convertNumber(item.totalPriceOrder)}} VNĐ</p>
-      <button mat-raised-button color="warn" (click)="cancel(item.id)"> Hủy Đơn Hàng</button>
+      <button mat-raised-button color="warn" *ngIf="item.status !=='Đã Giao Thành Công' && item.status !=='Đang Giao Hàng' && item.status !=='Đã Hủy Đơn Hàng'" (click)="cancel(item.id)"> Hủy Đơn Hàng</button>
     </div>
   </div>
   <div class=" ml-10 w-11/12 h-16 mt-10 border-2 flex">

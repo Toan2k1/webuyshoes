@@ -50,7 +50,7 @@ export class ProductdetailComponent implements OnInit {
       quantity: this.form.value.quantity
     }
     this.cartService.addToCart(data).subscribe(res => {
-      console.log(res)
+      alert("Thêm giỏ hàng thành công")
     })
   }
   convertNumber(s: any) {

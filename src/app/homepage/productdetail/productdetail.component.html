@@ -44,7 +44,7 @@
 <div class=" ml-10 mt-10">
   <p class="w-full text-center text-3xl font-bold">Phản Hồi Khách Hàng</p>
   <div class=" flex mt-10">
-    <img class="rounded-full w-16 h-16 mr-10" src="./assets/img/adidas.png" alt="">
+    <img class="rounded-full w-16 h-16 mr-10" src="./assets/img/avtuser.jpg" alt="">
     <form class="8/12 flex" [formGroup]="form1" (submit)="confirm(product.id)">
       <mat-form-field style="width:590px"   >
         <mat-label>Nhận Xét Của Bạn</mat-label>
@@ -55,7 +55,7 @@
   </div>
   <div class="h-auto">
   <div class="flex" *ngFor="let comment of productDetail">
-    <img class="rounded-full w-16 h-16 mr-3" src="./assets/img/adidas.png" alt="">
+    <img class="rounded-full w-16 h-16 mr-3" src="./assets/img/avtuser.jpg" alt="">
     <div class="">
     <p class="mt-3 font-bold ">{{comment.name}}</p>
       <p>{{comment.content}}</p>

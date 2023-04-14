@@ -59,6 +59,7 @@ form!:FormGroup
           width:'30%',
           height:'40%'
         });
+      window.location.reload();
     })
   }
   convertNumber(s: any) {
